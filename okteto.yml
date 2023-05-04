@@ -1,0 +1,8 @@
+name: php
+command: "bash"
+environment:
+  - MYSQL_ROOT_PASSWORD= '1234'
+sync:
+  - html:/var/www/html
+forward:
+  - 80:80
