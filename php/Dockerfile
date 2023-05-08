@@ -8,4 +8,4 @@ RUN apt-get update && apt-get upgrade -y
 RUN a2enmod rewrite
 RUN wget https://getcomposer.org/download/2.0.9/composer.phar \ 
     && mv composer.phar /usr/bin/composer && chmod +x /usr/bin/composer
-COPY apache/apache.conf /etc/apache2/sites-enabled/000-default.conf
+
