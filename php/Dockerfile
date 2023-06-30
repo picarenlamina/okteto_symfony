@@ -7,8 +7,13 @@ RUN apt-get update && apt-get upgrade -y
 #https://accesto.com/blog/simple-docker-setup-for-symfony-project/
 RUN a2enmod rewrite
 #RUN wget https://getcomposer.org/download/2.0.9/composer.phar  
-RUN wget -O composer-setup.php https://getcomposer.org/installer
-RUN mv composer.phar /usr/bin/composer 
-RUN chmod +x /usr/bin/composer
+#RUN wget -O composer-setup.php https://getcomposer.org/installer
+#RUN mv composer.phar /usr/bin/composer 
+#RUN chmod +x /usr/bin/composer
+
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer && chmod +x /usr/bin/composer
+
+RUN php /usr/bin/composer install 
+
 #COPY apache.conf /etc/apache2/sites-enabled/000-default.conf
 
