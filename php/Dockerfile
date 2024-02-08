@@ -11,9 +11,10 @@ RUN a2enmod rewrite
 #RUN mv composer.phar /usr/bin/composer 
 #RUN chmod +x /usr/bin/composer
 
+sudo apt-get install curl php-cli php-mbstring git unzip
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer && chmod +x /usr/bin/composer
 
 RUN php /usr/bin/composer install 
 
-#COPY apache.conf /etc/apache2/sites-enabled/000-default.conf
+COPY apache.conf /etc/apache2/sites-enabled/000-default.conf
 
